@@ -1,0 +1,77 @@
+﻿@model IEnumerable<SanRafael.Models.Receta>
+@{
+    ViewData["Title"] = "IndexVariables";
+}
+<section class="container-fluid">
+    <h2>Costos variables</h2>
+                
+    <div class="d-flex justify-content-end mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text">$</span>
+        </div>
+        <input type="text" id="txtTotalVariable" class="text-center bg-light form-control-sm" readonly>        
+    </div>    
+    
+    <div class="table-responsive-md">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nombre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CostoUnitario)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PrecioDefinidoPorUsuario)
+                    </th>
+                    <th>
+                        Mezcla de producto
+                    </th>
+                    <th>
+                        Costo de operación
+                    </th>
+                    <th>
+                        Ingreso
+                    </th>
+                    <th>
+                        Acciones
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        $ @Html.DisplayFor(modelItem => item.CostoUnitario)
+                    </td>
+                    <td>
+                        $ @Html.DisplayFor(modelItem => item.PrecioDefinidoPorUsuario)
+                    </td>
+                    <!--La mezcla de producto es la cantidad de platillos que se han vendido de esa
+                    receta-->
+                    <td id="tdMezclaProducto">
+                        @Html.DisplayFor(modelItem => item.RecetasVendidas)
+                    </td>
+                    <!--El cosot de operación es el total de los platillos vendidos de la receta multiplicado
+                        por su costo unitario-->
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CostoOperacion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IngresoProducto)
+                    </td>
+
+                    <td>
+                        <a asp-action="ActualizarRecetasVendidas" asp-route-id="@item.Id" class="btn btn-sm btn-info">Registrar venta</a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>

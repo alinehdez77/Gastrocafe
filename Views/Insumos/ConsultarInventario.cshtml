@@ -1,0 +1,103 @@
+﻿@model IEnumerable<SanRafael.Models.InsumoModels.Insumo>
+@{
+    ViewData["Title"] = "ConsultarInventario";
+    <script>
+        var modelo = '@Html.Raw(Json.Serialize(Model))';
+        var filtrosSeleccionados = [];
+    </script>
+}
+
+<section>
+    <aside class="filtros">
+        <h3>Filtros</h3>
+        <input type="text" id="txtBuscarInventario" name="busqueda" placeholder="Buscar" />
+        <h4> Categoría:</h4>
+        @foreach (var obj in ViewBag.categorias)
+        {
+            <label class="lblFiltro"><input type="checkbox" class="filtroInventario" id="@obj.Nombre">@obj.Nombre</label>
+        }
+    </aside>
+</section>
+
+
+<section class="container cards animated bounceInUp" id="sectionTarjetas">
+    <div class="row" id="tarjetas">
+        @{
+            var color = "";
+
+            @foreach (var item in Model)
+            {
+
+                if (item.Cantidad <= item.StockMinimo)
+                {
+                    color = "#E74C3C";
+                }
+                else if ((item.Cantidad - 2) <= item.StockMinimo)
+                {
+                    color = "#F1948A";
+                }
+                else
+                {
+                    color = "white";
+                }
+
+                <div class="col-md-2 col-sm-12 divCard">
+                    <div class="cardInsumo insumoInventario" id="@item.Id" style="background-color:@color;">
+                        <div class="imgText">
+                            <div class="img">
+                                <img src="@Html.DisplayFor(modelItem => item.RutaImagen)">
+                            </div>
+                            <h2>@Html.DisplayFor(modelItem => item.Nombre)</h2>
+                            <span>Stock min: <span>@Html.DisplayFor(modelItem => item.StockMinimo)</span></span>
+                            <span>Stock: <span>@Html.DisplayFor(modelItem => item.Cantidad)</span></span>
+                            <br />
+                        </div>
+                    </div>
+                </div>
+            }
+
+        }
+    </div>
+</section>
+
+<div class="hiddenDiv">
+    <div id="modalDatosInsumo" class="container detallesInventario">
+        <div class="imgInventario">
+            <img id="imagenInsumo">
+        </div>
+        <h1 id="nombreInsumo" class="img"></h1>
+
+        <div class="row">
+            <div class="col-sm detallesInventario">
+
+                <span>Unidad:  <span id="unidad"> </span></span>
+                <span>Stock min: <span id="stockMin"> </span></span>
+                <span>Stock: <span id="stock"> </span></span>
+                <span>Ultima fecha de compra: <span id="ultimaCompra"> </span></span>
+                <br />
+                <span>Bajas por merma: <span id="bajasMerma"> </span></span>
+                <span>Bajas por ventas: <span id="bajasVentas"> </span></span>
+                <br />
+            </div>
+
+            <div class="col-sm detallesInventario">
+                <span>Marcas:</span>
+
+                <table class="table">
+                    <tbody id="tbodyMarcas"></tbody>
+                </table>
+
+                <span>Presentaciones disponibles:</span>
+
+                <table class="table">
+                    <tbody id="tbodyPresentaciones"></tbody>
+                </table>
+            </div>
+        </div>
+        <span>
+            <button class="btn-warning btnDescontar" id="btnDescontarMerma">Descontar por merma</button>
+            <input type="number" class="cantidad" min="1" id="txtCantidadMerma" value="1" />
+            <span id="errorMerma"></span>
+        </span>
+    </div>
+</div>

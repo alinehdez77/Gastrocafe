@@ -1,0 +1,59 @@
+﻿@model IEnumerable<SanRafael.Models.Presentacion>
+
+@{
+    ViewData["Title"] = "Presentaciones";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Nueva presentación</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.cantidadUnidades)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.precioPresentacion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.precioUnitario)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.fechaCaducidad)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cantidadUnidades)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.precioPresentacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.precioUnitario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fechaCaducidad)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.idPresentacion">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.idPresentacion">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.idPresentacion">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

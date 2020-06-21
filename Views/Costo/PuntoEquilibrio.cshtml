@@ -1,0 +1,26 @@
+﻿@model IEnumerable<SanRafael.Models.Costo>
+
+@{
+    ViewData["Title"] = "PuntoEquilibrio";
+}
+
+<section class="container">
+    <h2>Punto de equilibrio</h2>
+    <hr/>
+    <div class="row">
+        <div class="col-md-10 offset-md-4">
+            <dl class="row">
+                <dt class="col-sm-3">Total de costos fijos</dt>
+                <dd class="col-sm-9" id="ddTotalFijo"></dd>
+                <dt class="col-sm-3">Total de costos variables</dt>
+                <dd class="col-sm-9" id="ddTotalVariable"></dd>
+                <dt class="col-sm-3">Total de costos otro</dt>
+                <dd class="col-sm-9" id="ddTotalOtro"></dd>
+                <dt class="col-sm-3">Total de ingresos</dt>
+                <dd class="col-sm-9" id="ddTotalIngresos"></dd>
+                <dt class="col-sm-3">Utilidad o pérdida estimada</dt>
+                <dt class="col-sm-9" id="ddPuntoEquilibrio"></dt>
+            </dl>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,97 @@
+﻿@model SanRafael.Models.Receta
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="container">
+
+
+    <h2>Dar de baja</h2>
+
+    <h3>¿Está seguro(a) de dar de baja el siguiente registro?</h3>
+    <div>
+        <h4>Receta</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Nombre)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.MetodoPreparacion)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.MetodoPreparacion)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Porciones)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Porciones)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.TipoReceta)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.TipoReceta)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Clasificacion)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Clasificacion)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.CostoUnitario)
+            </dt>
+            <dd>
+                $@Html.DisplayFor(model => model.CostoUnitario)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.CostoOtrosConUtilidad)
+            </dt>
+            <dd>
+                $@Html.DisplayFor(model => model.CostoOtrosConUtilidad)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.PrecioSugerido)
+            </dt>
+            <dd>
+                $@Html.DisplayFor(model => model.PrecioSugerido)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.PrecioDefinidoPorUsuario)
+            </dt>
+            <dd>
+                $@Html.DisplayFor(model => model.PrecioDefinidoPorUsuario)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.PrecioVentaConIva)
+            </dt>
+            <dd>
+                $@Html.DisplayFor(model => model.PrecioVentaConIva)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Activo)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Activo)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.AreaProduccionId)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.AreaProduccionId)
+            </dd>
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Dar de baja" class="btn btn-default" /> |
+            <a asp-action="Index">Regresar al listado</a>
+        </form>
+    </div>
+</div>

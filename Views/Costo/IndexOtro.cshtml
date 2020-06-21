@@ -1,0 +1,89 @@
+﻿@model IEnumerable<SanRafael.Models.Costo>
+@{
+    ViewData["Title"] = "IndexOtro";
+}
+<section class="container">
+    <h2>Costos otros</h2>
+    <p>
+        <a asp-action="CreateOtro">Registrar costo otro</a>
+    </p>
+
+    <div class="d-flex justify-content-end mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text">$</span>
+        </div>
+        <input type="text" id="txtTotalOtro" class="text-center bg-light form-control-sm" readonly>
+    </div>
+
+    <div class="table-responsive-md">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nombre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Tipo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Monto)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FechaRegistro)
+                    </th>                    
+                    <th>
+                        Estado
+                    </th>
+                    <th>
+                        Acciones
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    if (item.Tipo.Equals("Otro"))
+                    {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tipo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Monto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaRegistro)
+                    </td>                    
+                    <td>
+                        @if (item.Deshabilitado == true)
+                        {
+                            <span>Deshabilitado</span>
+                        }
+                        else
+                        {
+                            <span>Habilitado</span>
+                        }
+                    </td>
+                    <td>
+                        <a asp-action="EditOtro" asp-route-id="@item.Id" class="btn btn-sm btn-secondary">Editar</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">Detalles</a> |
+                        @if (item.Deshabilitado)
+                        {
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Habilitar</a>
+                        }
+                        else
+                        {
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Deshabilitar</a>
+                        }
+                    </td>
+                </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</section>

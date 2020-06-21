@@ -1,0 +1,51 @@
+﻿@model IEnumerable<SanRafael.Models.InsumoModels.Categoria>
+
+@{
+    ViewData["Title"] = "Categorías";
+}
+
+<section class="container">
+    <h2>Categorías</h2>
+    <p>
+        <a asp-action="Create">Crear nueva Categoría</a>
+    </p>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">
+                    @Html.DisplayNameFor(m => m.Nombre)
+                </th>
+                <th scope="col">
+                    Acciones
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+
+                @if (item.Id == 1) {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nombre)
+                        </td>
+                        <td></td>
+                    </tr>
+                    continue;
+                }
+
+                <tr score="row">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-primary">Editar</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info" >Detalles</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger" >Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>

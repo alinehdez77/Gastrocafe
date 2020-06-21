@@ -1,0 +1,27 @@
+﻿@model SanRafael.Models.InsumoModels.Categoria
+
+@{
+    ViewData["Title"] = "Detalles";
+}
+
+<section class="container">
+    <h2>Detalles de Categoría</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h4>Categoría</h4>
+            <dl class="row">
+                <dt class="col-2">
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </dt>
+                <dd class="col-10">
+                    @Html.DisplayFor(model => model.Nombre)
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.Id">Editar</a> |
+        <a asp-action="Index">Regresar al Listado</a>
+    </div>
+</section>

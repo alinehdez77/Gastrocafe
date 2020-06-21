@@ -1,0 +1,87 @@
+﻿@model IEnumerable<SanRafael.Models.InsumoModels.Insumo>
+@{
+    ViewData["Title"] = "Ver insumos";
+}
+
+<script>
+    var filtrosSeleccionados = [];
+    var model = '@Html.Raw(Json.Serialize(Model))';
+</script>
+
+<section>
+    <aside class="filtros">
+        <h3>Filtros</h3>
+        <input type="text" id="txtBuscarPresentaciones" name="busqueda" placeholder="Buscar" />
+        <h4> Categoría:</h4>
+        @foreach (var obj in ViewBag.categorias)
+        {
+            <label class="lblFiltro"><input type="checkbox" class="filtroPresentaciones" id="@obj.Nombre">@obj.Nombre</label>
+        }
+    </aside>
+</section>
+
+<section class="container cards animated slideInDown">
+    <div class="row">
+        @{
+            var bandera = true;
+            @foreach (var item in Model)
+            {
+                @if (item.Deshabilitado == false)
+                {
+                    if (bandera)
+                    {
+                        <div class="col-md-2 col-sm-12 divCard">
+                            <div class="insumoSeleccionado" id="@Html.DisplayFor(modelItem => item.Id)">
+                                <div class="cardInsumo">
+                                    <div class="imgText">
+                                        <div class="img">
+                                            <img src="@Html.DisplayFor(modelItem => item.RutaImagen)">
+                                        </div>
+                                        <h2 class="nombrePresentacion">@Html.DisplayFor(modelItem => item.Nombre)</h2>
+                                        <hr />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        bandera = false;
+                    }
+                    else
+                    {
+                        <div class="col-md-2 col-sm-12 offset-sm-0 divCard">
+                            <div class="insumoSeleccionado" id="@Html.DisplayFor(modelItem => item.Id)">
+                                <div class="cardInsumo">
+                                    <div class="imgText">
+                                        <div class="img">
+                                            <img src="@Html.DisplayFor(modelItem => item.RutaImagen)">
+                                        </div>
+                                        <h2 class="nombrePresentacion">@Html.DisplayFor(modelItem => item.Nombre)</h2>
+                                        <hr />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            }
+        }
+    </div>
+
+    <div class="hiddenDiv">
+        <div id="modalPresentaciones" class="container">
+            <table class="table table-hover">                
+                <thead>                    
+                    <tr>
+                        <th scope="col">Presentación</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="presentaciones">
+
+                </tbody>
+            </table>
+            <div>
+                <a class="btn btn-sm btn-info" href="" id="btnAgregarPre">Agregar presentación</a>
+            </div>
+        </div>        
+    </div>
+</section>

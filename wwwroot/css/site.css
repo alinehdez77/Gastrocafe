@@ -1,0 +1,249 @@
+﻿body {
+    padding-bottom: 2em;
+}
+
+#portada {
+    background-image: url("/images/portada-3.jpg");
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.container-home {
+    margin-top: 70px;
+}
+
+.search-group-mxp input {
+    margin-right: 2em;
+}
+
+.search-group-mxp span {
+    margin-right: 2em;
+    font-weight: bold;
+}
+
+#lblBuscar {
+    display: inline;
+    width: 20%;
+    margin-right: 0px;
+}
+
+#btnBuscar {
+    display: inline;
+    margin-left: 25px;
+}
+
+#txtBuscar {
+    display: inline;
+    width: 70%;
+    margin-left: 0px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: #fbfbfb;
+}
+
+.img > img {
+    max-height: 70px;
+    border-radius: 360px;
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
+
+div.row > div {
+    margin-top: 10px;
+}
+
+.img {
+    text-align: center;
+}
+
+.cardInsumo {
+    align-items: center;
+    align-content: center;
+    border: .01px solid grey;
+    margin-top: 15px;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.34);
+    opacity: 0.92;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.nombrePresentacion{
+    text-align:center;
+}
+.cardInsumo h2 {
+    padding-left: 10px;
+    font-family: 'Baloo Bhaijaan', cursive;
+    font-size: 14px;
+}
+
+.cards {
+    margin-top: 5%;
+}
+
+.cardSobrePuesta {
+    background-image: url(https://www.shareicon.net/data/32x32/2016/01/04/698230_check_512x512.png);
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border-radius: 50px;
+    height: 32px;
+    width: 32px;
+    z-index: 2;
+    display: none;
+}
+
+.imgText > span {
+    padding-left: 10px;
+    display: block;
+}
+
+.botonF1 {
+    display: none;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    border: none;
+    outline: none;
+    color: #FFF;
+    font-size: 14px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.targetLarge {
+    align-items: center;
+    align-content: center;
+    border: .01px solid grey;
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.34);
+    opacity: 0.92;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 12px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin: auto;
+}
+.imgTarget {
+    text-align: center;
+    margin-bottom: 10px !important;
+}
+.textTarget {
+    margin-bottom: 10px !important;
+}
+.textTarget > span {
+    display: block;
+}
+.btnsTarget {
+    margin-bottom: 10px !important;
+}
+.imgTarget > img {
+    max-height: 100px;
+    border-radius: 360px;
+}
+.hiddenDiv{
+    display: none;
+}
+.divFunciones {
+    top: 0;
+    left: 0;
+    height: 40px;
+}
+.totalSpan {
+    float: left;
+    margin-top: 7px;
+}
+#btnRegistrarCompras{
+    background-color: #0082ff;
+    color: white;
+    float: right;
+}
+
+
+.filtros {
+    height: 100%;
+    float: left;
+    width: 15%;
+    padding-left: 15px;
+}
+
+    .filtros > h3 {
+        font-family: 'Baloo Bhaijaan', sans-serif;
+        margin-top: 10%;
+        font-size: 20px;
+    }
+
+    .filtros > input[type=text] {
+        height: 30px;
+        border: 1px solid #ccc;
+        border-radius: 15px;
+        background-image: url('https://image.flaticon.com/icons/svg/149/149309.svg');
+        background-position: 8px 5px;
+        background-repeat: no-repeat;
+        background-size: 18px;
+        padding: 10px 20px 10px 30px;
+        font-family: 'Varela Round', sans-serif;
+        font-size: 12px;
+    }
+
+    .filtros > h4 {
+        font-family: 'Baloo Bhaijaan', sans-serif;
+        font-size: 16px;
+        display: block;
+        text-align: left;
+        margin-top: 10%;
+    }
+
+.lblFiltro {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 14px;
+    display: block;
+}
+
+.detallesInventario > h1 {
+    font-family: 'Baloo Bhaijaan', sans-serif;
+    font-size: 22px;
+    text-align: center;
+}
+
+.detallesInventario > span {
+    padding-left: 10px;
+    display: block;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 14px;
+}
+
+.detallesInventario > button {
+    display: inline-block;
+    font-family: 'Varela Round', sans-serif;
+    padding-left: 10px;
+    font-size: 10px;
+}
+
+.detallesInventario > table {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 12px;
+}
+
+.imgInventario {
+    text-align: center;
+    margin-bottom: 3%;
+}
+
+    .imgInventario > img {
+        min-height: 80px;
+        max-height: 100px;
+    }
+
+.fuente {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 16px;
+}

@@ -1,0 +1,27 @@
+﻿@model SanRafael.Models.AreaProduccion
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Eliminar</h2>
+
+<h3>¿Estás seguro(a) de eliminar el registro? Las recetas del area también se eliminarán.</h3>
+<div>
+    <h4>Area de produccion</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Eliminar" class="btn btn-default" /> |
+        <a asp-action="Index">Regresar al listado</a>
+    </form>
+</div>

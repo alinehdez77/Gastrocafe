@@ -1,0 +1,60 @@
+﻿@model SanRafael.Models.InsumoModels.Categoria
+
+@{
+    ViewData["Title"] = "Eliminar";
+}
+
+<section class="container">
+    <h2>Eliminar Categoría</h2>
+    <hr />
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>¿Estas seguro de eliminar?</h4>
+            <hr />
+            <h5>Categoría</h5>
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group row">
+                    <label asp-for="Nombre" class="col-sm-3 col-form-label font-weight-bold"></label>
+                    <div class="col-sm-9">
+                        <input asp-for="Nombre" type="text" readonly class="form-control-plaintext" />
+                        <small class="form-text text-muted">Los insumos afectados obtendrán la categoría "Sin Categoría".</small>
+                    </div>
+                </div>
+                <hr />
+                    <input type="submit" value="Eliminar" class="btn btn-block btn-primary" />
+            </form>
+        </div>
+
+        <div class="col-md-6 offset-md-2">
+            <h4>Insumos Afectados</h4>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>                            
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var insumo in ViewBag.Insumos) { 
+                            <tr>
+                                <td>@insumo.Nombre</td>                                
+                                @if (insumo.Deshabilitado)
+                                {
+                                    <td>Deshabilitado</td>
+                                }
+                                else { 
+                                    <td>Habilitado</td>
+                                }
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <br />
+    <a asp-action="Index">Regresar al Listado</a>
+</section>

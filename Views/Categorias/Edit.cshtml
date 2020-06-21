@@ -1,0 +1,35 @@
+﻿@model SanRafael.Models.InsumoModels.Categoria
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+
+<section class="container">
+    <h2>Editar Categoría</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <h4>Categoría</h4>
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group">
+                    <label asp-for="Nombre" class="control-label"></label>
+                    <input asp-for="Nombre" class="form-control" />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Guardar cambios" class="btn btn-sm btn-block btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Regresar al Listado</a>
+    </div>
+</section>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

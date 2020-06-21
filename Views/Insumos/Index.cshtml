@@ -1,0 +1,181 @@
+﻿@model IEnumerable<SanRafael.Models.InsumoModels.Insumo>
+
+@{
+    ViewData["Title"] = "Insumos";
+    var cantidadPaginas = (int)Math.Ceiling((double)ViewBag.TotalDeRegistros / ViewBag.TamañoPagina);
+    int Inicial = 1;
+    var radio = 3;
+    var cantidadMaximaDePaginas = radio * 2 + 1;
+    int Final = (cantidadPaginas > cantidadMaximaDePaginas) ? cantidadMaximaDePaginas : cantidadPaginas;
+    if (ViewBag.PaginaActual > radio + 1)
+    {
+        Inicial = ViewBag.PaginaActual - radio;
+        if (cantidadPaginas > ViewBag.PaginaActual + radio)
+        {
+            Final = ViewBag.PaginaActual + radio;
+        }
+        else
+        {
+            Final = cantidadPaginas;
+        }
+    }
+}
+
+<h2>Lista de Insumos</h2>
+<p>
+    <a asp-action="Create">Registrar nuevo Insumo</a>
+</p>
+
+<div class="container">
+
+    <div class="row">
+        <form class="col-sm-12" method="get" asp-action="Index">
+            <div class="form-group row justify-content-center">
+                <label for="busqueda" class="col-sm-4 col-lg-2 col-form-label" id="lblBuscar">Bucar por nombre:</label>
+                <input type="text" class="form-control" id="txtBuscar" name="busqueda" value="@ViewBag.BusquedaActual" />
+                <button class="btn btn-primary" id="btnBuscar">Buscar</button>
+            </div>
+            <div class="form-group row">
+                <div class="col-4">                       
+                    <span> </span><a asp-action="Index">Mostrar todos los registros</a>
+                </div>
+                <div class="col-8">
+                    <div class="row justify-content-end">
+                        <div class="form-group">
+                            <button type="button" class="btn btn-outline-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Ordenar por
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" asp-action="Index" asp-route-orden="Nombre" asp-route-estado="@ViewBag.EstadoActual" asp-route-busqueda="@ViewBag.BusquedaActual">Nombre</a>
+                                <a class="dropdown-item" asp-action="Index" asp-route-orden="Marca"  asp-route-estado="@ViewBag.EstadoActual" asp-route-busqueda="@ViewBag.BusquedaActual">Marca</a>
+                                <a class="dropdown-item" asp-action="Index" asp-route-orden="Categoria" asp-route-estado="@ViewBag.EstadoActual" asp-route-busqueda="@ViewBag.BusquedaActual">Categor&Iacute;a</a>
+                                <a class="dropdown-item" asp-action="Index" asp-route-orden="Merma" asp-route-estado="@ViewBag.EstadoActual" asp-route-busqueda="@ViewBag.BusquedaActual">Merma</a>
+                                <a class="dropdown-item" asp-action="Index" asp-route-orden="Precio_Ajustado" asp-route-estado="@ViewBag.EstadoActual" asp-route-busqueda="@ViewBag.BusquedaActual">Precio Ajustado</a>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-outline-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Estado
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" asp-action="Index" asp-route-orden="@ViewBag.OrdenActual"
+                                   asp-route-busqueda="@ViewBag.BusquedaActual" asp-route-estado="0">Habilitado</a>
+                                <a class="dropdown-item" asp-action="Index" asp-route-orden="@ViewBag.OrdenActual"
+                                   asp-route-busqueda="@ViewBag.BusquedaActual" asp-route-estado="1">Deshabilitado</a>
+                                <a class="dropdown-item" asp-action="Index" asp-route-orden="@ViewBag.OrdenActual"
+                                   asp-route-busqueda="@ViewBag.BusquedaActual" asp-route-estado="2">Todos</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="table-responsive-md">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Categoria)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Unidad)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Precio)
+                </th>
+                <th>
+                    Estado
+                </th>
+                <th>
+                    Acciones
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Categoria.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Unidad.Nombre)
+                    </td>
+                    <td>
+                        <span>$</span> @Html.DisplayFor(modelItem => item.Precio)
+                    </td>
+                    <td>
+                        @if (item.Deshabilitado == true)
+                        {
+                            <span>Deshabilitado</span>
+                        }
+                        else
+                        {
+                            <span>Habilitado</span>
+                        }
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-secondary">Editar</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">Detalles</a> |
+
+                        @if (item.Deshabilitado)
+                        {
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Habilitar</a>
+                        }
+                        else
+                        {
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Deshabilitar</a>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+            <li class="page-item">
+                <a class="page-link" asp-action="Index" asp-route-estado="@ViewBag.EstadoActual" asp-route-orden="@ViewBag.OrdenActual"
+                   asp-route-pagina="1" asp-route-busqueda="@ViewBag.BusquedaActual">
+                    Primera
+                </a>
+            </li>
+            @for (int i = Inicial; i <= Final; i++)
+            {
+                if (i == ViewBag.PaginaActual)
+                {
+                    <li class="page-item active">
+                        <a class="page-link" asp-action="Index" asp-route-estado="@ViewBag.EstadoActual" asp-route-orden="@ViewBag.OrdenActual"
+                           asp-route-pagina="@i" asp-route-busqueda="@ViewBag.BusquedaActual">
+                            @i
+                        </a>
+                    </li>
+                }
+                else
+                {
+                    <li class="page-item">
+                        <a class="page-link" asp-action="Index" asp-route-estado="@ViewBag.EstadoActual" asp-route-orden="@ViewBag.OrdenActual"
+                           asp-route-pagina="@i" asp-route-busqueda="@ViewBag.BusquedaActual">
+                            @i
+                        </a>
+                    </li>
+                }
+            }
+            <li class="page-item">
+                <a class="page-link" asp-action="Index" asp-route-pagina="@cantidadPaginas" asp-route-estado="@ViewBag.EstadoActual" asp-route-orden="@ViewBag.OrdenActual"
+                   asp-route-busqueda="@ViewBag.BusquedaActual">
+                    Ultima
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>

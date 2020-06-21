@@ -1,0 +1,62 @@
+﻿@model SanRafael.Models.Presentacion
+
+@{
+    ViewData["Title"] = "Presentaciones";
+}
+
+<section class="container">
+    <h2>Registra una presentación</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h4>Presentación</h4>
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="nombre" class="control-label"></label>
+                    <input asp-for="nombre" class="form-control" />
+                    <span asp-validation-for="nombre" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="precioPresentacion" class="control-label"></label>
+                    <input asp-for="precioPresentacion" class="form-control" type="number" min="0" data-msg="Ingresa un valor mayor a 0" id="presentacionPrecio" />
+                    <span asp-validation-for="precioPresentacion" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="UnidadId"></label>
+                    <select class="custom-select bg-info text-light" asp-for="UnidadId" asp-items="@( new SelectList(ViewBag.Unidades, "Id","Nombre"))">
+                        <option value="" disabled selected>Selecciona una Unidad</option>
+                    </select>
+                    <span asp-validation-for="UnidadId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="cantidadUnidades" class="control-label"></label>
+                    <input asp-for="cantidadUnidades" class="form-control" type="number" min="0" data-msg="Ingresa un valor mayor a 0" id="unidades" />
+                    <span asp-validation-for="cantidadUnidades" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="precioUnitario" class="control-label"></label>
+                    <input asp-for="precioUnitario" class="form-control" type="number" min="0" data-msg="Ingresa un valor mayor a 0" id="precioUnitario" />
+                    <span asp-validation-for="precioUnitario" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                            <input asp-for="fechaCaducidad" /> @Html.DisplayNameFor(model => model.fechaCaducidad)
+                        </label>
+                    </div>
+                </div>                
+                <div class="form-group">
+                    <input type="submit" value="Registrar presentación" class="btn btn-block btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <label id="idInsumo" class="hiddenDiv">@(ViewBag.idInsumo)</label>
+    <div>
+        <a asp-action="VerInsumos">Regresar a la lista</a>
+    </div>
+</section>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

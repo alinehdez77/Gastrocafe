@@ -1,0 +1,110 @@
+﻿@model IEnumerable<SanRafael.Models.Receta>
+
+@{
+    ViewData["Title"] = "Index";
+
+}
+
+<h2>Listado de recetas</h2>
+
+<p>
+    <a asp-action="Create">Crear nueva receta</a>
+</p>
+
+<div class="container">
+    <div class="col-12">
+        <form asp-action="Index" method="get">
+            <div class="form-group">
+                <label for="search">Buscar</label>
+                <input type="text" class="form-control" name="searchQuery" value="@ViewData["currentSearchQuery"]">
+
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Buscar" class="btn btn-primary" />
+                <a asp-action="Index">Mostrar todos los registros</a>
+            </div>
+            
+            <div class="form-group search-group-mxp">
+                <span>Filtrar por: </span>
+                <input type="hidden" name="currentFilter" id="currentFilter" value="@ViewData["currentFilter"]" />
+                <label for="nombreReceta">Nombre de receta</label>
+                <input type="radio" name="filter" id="nombreReceta" value="nombre">
+                <label for="tipoReceta">Tipo de receta</label>
+                <input type="radio" name="filter" id="tipoReceta" value="tipo_receta">
+                <label for="clasificacionReceta">Clasificación de receta</label>
+                <input type="radio" name="filter" id="clasificacionReceta" value="clasificacion_receta">
+                <label for="areaProduccion">Área de producción</label>
+                <input type="radio" name="filter" id="areaProduccion" value="area_produccion">
+            </div>
+
+
+            
+        </form>
+    </div>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoReceta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Clasificacion)
+            </th>
+            <!--
+            <th>
+                @Html.DisplayNameFor(model => model.CostoOtrosConUtilidad)
+            </th>
+            -->
+            <th>
+                @Html.DisplayNameFor(model => model.PrecioVentaConIva)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrecioDefinidoPorUsuario)
+            </th>
+            <th>
+                Area de producción
+            </th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoReceta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Clasificacion)
+            </td>
+            <!--
+            <td>
+                $@Html.DisplayFor(modelItem => item.CostoOtrosConUtilidad)
+            </td>
+            -->
+            <td>
+                $@Html.DisplayFor(modelItem => item.PrecioVentaConIva)
+            </td>
+            <td>
+                $@Html.DisplayFor(modelItem => item.PrecioDefinidoPorUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AreaProduccion.Nombre)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Dar de baja</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

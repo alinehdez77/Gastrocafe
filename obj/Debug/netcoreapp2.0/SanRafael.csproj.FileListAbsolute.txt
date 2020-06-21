@@ -1,0 +1,126 @@
+C:\Users\Mauricio\source\repos\SanRafael\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.deps.json
+C:\Users\Mauricio\source\repos\SanRafael\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.runtimeconfig.json
+C:\Users\Mauricio\source\repos\SanRafael\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.runtimeconfig.dev.json
+C:\Users\Mauricio\source\repos\SanRafael\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.dll
+C:\Users\Mauricio\source\repos\SanRafael\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.pdb
+C:\Users\Mauricio\source\repos\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.csprojAssemblyReference.cache
+C:\Users\Mauricio\source\repos\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.csproj.CoreCompileInputs.cache
+C:\Users\Mauricio\source\repos\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\Mauricio\source\repos\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.AssemblyInfoInputs.cache
+C:\Users\Mauricio\source\repos\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.AssemblyInfo.cs
+C:\Users\Mauricio\source\repos\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.dll
+C:\Users\Mauricio\source\repos\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.pdb
+C:\Users\Missael\Desarrollo\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.deps.json
+C:\Users\Missael\Desarrollo\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.runtimeconfig.json
+C:\Users\Missael\Desarrollo\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.runtimeconfig.dev.json
+C:\Users\Missael\Desarrollo\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.dll
+C:\Users\Missael\Desarrollo\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.pdb
+C:\Users\Missael\Desarrollo\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.csprojAssemblyReference.cache
+C:\Users\Missael\Desarrollo\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.csproj.CoreCompileInputs.cache
+C:\Users\Missael\Desarrollo\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.AssemblyInfoInputs.cache
+C:\Users\Missael\Desarrollo\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.AssemblyInfo.cs
+C:\Users\Missael\Desarrollo\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.dll
+C:\Users\Missael\Desarrollo\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.pdb
+C:\Users\Missael\Desarrollo\SanRafael\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\Mauricio\Desktop\Codigorecetas\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.csprojAssemblyReference.cache
+C:\Users\Mauricio\Desktop\Codigorecetas\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.csproj.CoreCompileInputs.cache
+C:\Users\Mauricio\Desktop\Codigorecetas\SanRafael\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\Mauricio\Desktop\Codigorecetas\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.AssemblyInfoInputs.cache
+C:\Users\Mauricio\Desktop\Codigorecetas\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.AssemblyInfo.cs
+C:\Users\Mauricio\Desktop\Codigorecetas\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.dll
+C:\Users\Mauricio\Desktop\Codigorecetas\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.pdb
+C:\Users\Mauricio\Desktop\Codigorecetas\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.deps.json
+C:\Users\Mauricio\Desktop\Codigorecetas\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.runtimeconfig.json
+C:\Users\Mauricio\Desktop\Codigorecetas\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.runtimeconfig.dev.json
+C:\Users\Mauricio\Desktop\Codigorecetas\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.dll
+C:\Users\Mauricio\Desktop\Codigorecetas\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.pdb
+C:\Users\Mauricio\Desktop\Escritorio\SanRafael\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.deps.json
+C:\Users\Mauricio\Desktop\Escritorio\SanRafael\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.runtimeconfig.json
+C:\Users\Mauricio\Desktop\Escritorio\SanRafael\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.runtimeconfig.dev.json
+C:\Users\Mauricio\Desktop\Escritorio\SanRafael\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.dll
+C:\Users\Mauricio\Desktop\Escritorio\SanRafael\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.pdb
+C:\Users\Mauricio\Desktop\Escritorio\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.csprojAssemblyReference.cache
+C:\Users\Mauricio\Desktop\Escritorio\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.csproj.CoreCompileInputs.cache
+C:\Users\Mauricio\Desktop\Escritorio\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\Mauricio\Desktop\Escritorio\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.AssemblyInfoInputs.cache
+C:\Users\Mauricio\Desktop\Escritorio\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.AssemblyInfo.cs
+C:\Users\Mauricio\Desktop\Escritorio\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.dll
+C:\Users\Mauricio\Desktop\Escritorio\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.pdb
+C:\Users\iro19\Google Drive\San rafael\VS\Insumos\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.deps.json
+C:\Users\iro19\Google Drive\San rafael\VS\Insumos\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.runtimeconfig.json
+C:\Users\iro19\Google Drive\San rafael\VS\Insumos\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.runtimeconfig.dev.json
+C:\Users\iro19\Google Drive\San rafael\VS\Insumos\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.dll
+C:\Users\iro19\Google Drive\San rafael\VS\Insumos\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.pdb
+C:\Users\iro19\Google Drive\San rafael\VS\Insumos\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.csprojAssemblyReference.cache
+C:\Users\iro19\Google Drive\San rafael\VS\Insumos\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.csproj.CoreCompileInputs.cache
+C:\Users\iro19\Google Drive\San rafael\VS\Insumos\SanRafael\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\iro19\Google Drive\San rafael\VS\Insumos\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.AssemblyInfoInputs.cache
+C:\Users\iro19\Google Drive\San rafael\VS\Insumos\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.AssemblyInfo.cs
+C:\Users\iro19\Google Drive\San rafael\VS\Insumos\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.dll
+C:\Users\iro19\Google Drive\San rafael\VS\Insumos\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.pdb
+C:\Users\watwi\Documents\Github\SanRafael\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.deps.json
+C:\Users\watwi\Documents\Github\SanRafael\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.runtimeconfig.json
+C:\Users\watwi\Documents\Github\SanRafael\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.runtimeconfig.dev.json
+C:\Users\watwi\Documents\Github\SanRafael\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.dll
+C:\Users\watwi\Documents\Github\SanRafael\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.pdb
+C:\Users\watwi\Documents\Github\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.csprojAssemblyReference.cache
+C:\Users\watwi\Documents\Github\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.csproj.CoreCompileInputs.cache
+C:\Users\watwi\Documents\Github\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\watwi\Documents\Github\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.AssemblyInfoInputs.cache
+C:\Users\watwi\Documents\Github\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.AssemblyInfo.cs
+C:\Users\watwi\Documents\Github\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.dll
+C:\Users\watwi\Documents\Github\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.pdb
+C:\Users\alanc\Documents\GitHub\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.csproj.CoreCompileInputs.cache
+C:\Users\alanc\Documents\GitHub\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.AssemblyInfoInputs.cache
+C:\Users\alanc\Documents\GitHub\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.AssemblyInfo.cs
+C:\Users\alanc\Documents\GitHub\SanRafael\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.deps.json
+C:\Users\alanc\Documents\GitHub\SanRafael\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.runtimeconfig.json
+C:\Users\alanc\Documents\GitHub\SanRafael\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.runtimeconfig.dev.json
+C:\Users\alanc\Documents\GitHub\SanRafael\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.dll
+C:\Users\alanc\Documents\GitHub\SanRafael\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.pdb
+C:\Users\alanc\Documents\GitHub\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.dll
+C:\Users\alanc\Documents\GitHub\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.pdb
+C:\Users\alanc\Documents\GitHub\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.csprojAssemblyReference.cache
+C:\Users\alanc\Documents\GitHub\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\iro19\Documents\GitHub\SanRafael\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.deps.json
+C:\Users\iro19\Documents\GitHub\SanRafael\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.runtimeconfig.json
+C:\Users\iro19\Documents\GitHub\SanRafael\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.runtimeconfig.dev.json
+C:\Users\iro19\Documents\GitHub\SanRafael\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.dll
+C:\Users\iro19\Documents\GitHub\SanRafael\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.pdb
+C:\Users\iro19\Documents\GitHub\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.csproj.CoreCompileInputs.cache
+C:\Users\iro19\Documents\GitHub\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\iro19\Documents\GitHub\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.AssemblyInfoInputs.cache
+C:\Users\iro19\Documents\GitHub\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.AssemblyInfo.cs
+C:\Users\iro19\Documents\GitHub\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.dll
+C:\Users\iro19\Documents\GitHub\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.pdb
+C:\Users\iro19\Documents\GitHub\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.csprojAssemblyReference.cache
+C:\Users\iro19\Documents\Git\SanRafael\SanRafael\bin\Debug\netcoreapp2.0\appsettings.Development.json
+C:\Users\iro19\Documents\Git\SanRafael\SanRafael\bin\Debug\netcoreapp2.0\appsettings.json
+C:\Users\iro19\Documents\Git\SanRafael\SanRafael\bin\Debug\netcoreapp2.0\bundleconfig.json
+C:\Users\iro19\Documents\Git\SanRafael\SanRafael\bin\Debug\netcoreapp2.0\Properties\launchSettings.json
+C:\Users\iro19\Documents\Git\SanRafael\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.deps.json
+C:\Users\iro19\Documents\Git\SanRafael\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.runtimeconfig.json
+C:\Users\iro19\Documents\Git\SanRafael\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.runtimeconfig.dev.json
+C:\Users\iro19\Documents\Git\SanRafael\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.dll
+C:\Users\iro19\Documents\Git\SanRafael\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.pdb
+C:\Users\iro19\Documents\Git\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.csprojAssemblyReference.cache
+C:\Users\iro19\Documents\Git\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.AssemblyInfoInputs.cache
+C:\Users\iro19\Documents\Git\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.AssemblyInfo.cs
+C:\Users\iro19\Documents\Git\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.dll
+C:\Users\iro19\Documents\Git\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.pdb
+C:\Users\iro19\Documents\Git\SanRafael\SanRafael\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\Montse\Downloads\SanRafael-master (2)\SanRafael-master\SanRafael\bin\Debug\netcoreapp2.0\appsettings.Development.json
+C:\Users\Montse\Downloads\SanRafael-master (2)\SanRafael-master\SanRafael\bin\Debug\netcoreapp2.0\appsettings.json
+C:\Users\Montse\Downloads\SanRafael-master (2)\SanRafael-master\SanRafael\bin\Debug\netcoreapp2.0\bundleconfig.json
+C:\Users\Montse\Downloads\SanRafael-master (2)\SanRafael-master\SanRafael\bin\Debug\netcoreapp2.0\Properties\launchSettings.json
+C:\Users\Montse\Downloads\SanRafael-master (2)\SanRafael-master\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.deps.json
+C:\Users\Montse\Downloads\SanRafael-master (2)\SanRafael-master\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.runtimeconfig.json
+C:\Users\Montse\Downloads\SanRafael-master (2)\SanRafael-master\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.runtimeconfig.dev.json
+C:\Users\Montse\Downloads\SanRafael-master (2)\SanRafael-master\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.dll
+C:\Users\Montse\Downloads\SanRafael-master (2)\SanRafael-master\SanRafael\bin\Debug\netcoreapp2.0\SanRafael.pdb
+C:\Users\Montse\Downloads\SanRafael-master (2)\SanRafael-master\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.csprojAssemblyReference.cache
+C:\Users\Montse\Downloads\SanRafael-master (2)\SanRafael-master\SanRafael\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\Montse\Downloads\SanRafael-master (2)\SanRafael-master\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.AssemblyInfoInputs.cache
+C:\Users\Montse\Downloads\SanRafael-master (2)\SanRafael-master\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.AssemblyInfo.cs
+C:\Users\Montse\Downloads\SanRafael-master (2)\SanRafael-master\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.dll
+C:\Users\Montse\Downloads\SanRafael-master (2)\SanRafael-master\SanRafael\obj\Debug\netcoreapp2.0\SanRafael.pdb

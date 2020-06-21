@@ -1,0 +1,95 @@
+﻿@model SanRafael.Controllers.InsumoControllers.InsumosController;
+@using SanRafael.Models.InsumoModels;
+@{
+    ViewData["Title"] = "Registrar compras";
+}
+<script>
+    var arrSeleccionados = [];
+    var arrRegistro = [];
+    var filtrosSeleccionados = [];
+    var botonActivo = false;
+    var model = '@Html.Raw(Json.Serialize(ViewBag.insumPresent))';
+    
+    var modelCategorias = '@Html.Raw(Json.Serialize(ViewBag.categorias))';
+    modelCategorias = JSON.parse(modelCategorias);
+    model = JSON.parse(model);
+
+</script>
+<aside class="filtros">
+    <h3>Filtros</h3>
+    <input type="text" id="txtBuscar" name="busqueda" placeholder="Buscar" />
+    <h4> Categoría:</h4>
+    @foreach (var obj in ViewBag.categorias)
+    {
+        <label class="lblFiltro"><input type="checkbox" class="filtro" id="@obj.Nombre">@obj.Nombre</label>
+
+    }
+
+</aside>
+<section class="container cards animated bounceInDown" id="cardsMedium">
+    <div class="row" id="row">
+        @{
+            if (ViewBag.mensaje.Equals(""))
+            {   
+                var primerElemento = true;
+                @foreach (var insumPresent in ViewBag.insumPresent)
+                {
+                    if (primerElemento)
+                    {
+                        <div class="col-md-2 col-sm-12 divCard">
+                            <div class="singleCard" id="@insumPresent.Insumo.Id-@insumPresent.Presentacion.idPresentacion">
+                                <div class="cardSobrePuesta"></div>
+                                <div class="cardInsumo">
+                                    <div class="imgText">
+                                        <div class="img">
+                                            <img src="@insumPresent.Insumo.RutaImagen">
+                                        </div>
+                                        <h2>@insumPresent.Insumo.Nombre</h2>
+                                        <span>Presentación: <span>@insumPresent.Presentacion.nombre</span></span>
+                                        <br />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        primerElemento = false;
+                    }
+                    else
+                    {
+                        <div class="col-md-2 col-sm-12 offset-sm-0 divCard">
+                            <div class="singleCard" id="@insumPresent.Insumo.Id-@insumPresent.Presentacion.idPresentacion">
+                                <div class="cardSobrePuesta"></div>
+                                <div class="cardInsumo">
+                                    <div class="imgText">
+                                        <div class="img">
+                                            <img src="@insumPresent.Insumo.RutaImagen">
+                                        </div>
+                                        <h2>@insumPresent.Insumo.Nombre</h2>
+                                        <span>Presentación: <span>@insumPresent.Presentacion.nombre</span></span>
+                                        <br />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            }
+            else
+            {
+                <h2>@ViewBag.mensaje</h2>
+            }
+        }
+
+    </div>
+    <button id="btnAgregarCompras" class="btn btn-primary botonF1">
+        <span>Agregar <span class="spanBtn"></span> insumo<span class="spanBtn2"></span></span>
+    </button>
+    <div class="hiddenDiv">
+        <div id="modalAgregarCompras" class="container">
+        
+            <div class="divFunciones">
+                <span class="totalSpan">Total: $<span id="total"></span></span>
+                <div class="btn" id="btnRegistrarCompras">Registrar compras</div>
+            </div>
+        </div>
+    </div>
+</section>

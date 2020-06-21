@@ -1,0 +1,63 @@
+﻿@model SanRafael.Models.Costo
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<section class="container">
+    <h3>¿Estás seguro (a) que desea eliminar el costo?</h3>
+    <hr />
+    <div class="row">
+        <div class="col-md-6 offset-md-4">
+            <h4>Costo</h4>
+            <dl class="row">
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Nombre)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Descripcion)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Descripcion)
+                </dd>
+                @if (Model.Tipo.Equals("Fijo"))
+                {
+                    <dt class="col-sm-3">
+                        @Html.DisplayNameFor(model => model.Periodicidad)
+                    </dt>
+                    <dd class="col-sm-9">
+                        @Html.DisplayFor(model => model.Periodicidad)
+                    </dd>
+                }
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Tipo)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Tipo)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Monto)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Monto)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.FechaRegistro)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.FechaRegistro)
+                </dd>
+            </dl>            
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <input type="submit" value="Deshabilitar" class="btn btn-sm btn-danger" />
+            </form>
+        </div>
+    </div>
+    <div>
+        <a asp-action="Index">Regresar al listado</a>
+    </div>
+</section>

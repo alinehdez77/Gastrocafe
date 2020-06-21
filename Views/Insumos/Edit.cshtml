@@ -1,0 +1,98 @@
+﻿@model SanRafael.Models.InsumoModels.Insumo
+
+@{
+    ViewData["Title"] = "Modificar";
+}
+
+<section class="container">
+    <h2>Modificar Insumo</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h4>Insumo</h4>
+            <form asp-action="Edit" id="form_create_insumo">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <input type="hidden" asp-for="Deshabilitado" />                
+                <div class="form-group">
+                    <label asp-for="Nombre" class="control-label"></label>
+                    <input asp-for="Nombre" class="form-control" />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Tienda" class="control-label"></label>
+                    <input asp-for="Tienda" class="form-control" />
+                    <span asp-validation-for="Tienda" class="text-danger"></span>
+                </div>
+
+
+                <hr />
+                <div class="form-group">
+                    <label asp-for="CategoriaId"></label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <select class="custom-select bg-info text-light" id="select_categoria" name="select_categoria">
+                                <option value="" disabled>Selecciona una Categoría</option>
+                                @foreach (var c in ViewBag.Categorias)
+                                {
+                                    if (c.Id == ViewBag.CategoriaActual)
+                                    {
+                                        <option value="@c.Id" selected="selected">@c.Nombre</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@c.Id">@c.Nombre</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                        <input id="nueva_categoria" name="nueva_categoria" type="text" class="form-control" placeholder="O crea una nueva Categoría" />
+                    </div>
+                    <small class="form-text text-muted">Si se selecciona una categoría y se ingresa una nueva, tendrá prioridad la nueva.</small>
+                    <span id="error_create_insumo_categoria" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="UnidadId"></label>
+                    <select class="custom-select bg-info text-light" asp-for="UnidadId" asp-items="@( new SelectList(ViewBag.Unidades, "Id","Nombre"))">
+                        <option value="" disabled>Selecciona una Unidad</option>
+                    </select>
+                    <span asp-validation-for="UnidadId" class="text-danger"></span>
+                </div>
+                <hr />
+
+
+                <div class="form-group">
+                    <label asp-for="Precio" class="control-label"></label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                        </div>
+                        <input asp-for="Precio" type="number" min="0" data-msg="Ingresa un valor mayor a 0" class="form-control" />
+                    </div>
+                    <span asp-validation-for="Precio" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="StockMinimo" class="control-label"></label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">#</span>
+                        </div>
+                        <input asp-for="StockMinimo" type="number" min="0" data-msg="Ingresa un valor mayor a 0" class="form-control" />
+                    </div>
+                    <span asp-validation-for="StockMinimo" class="text-danger"></span>
+                </div>
+
+                <input type="submit" id="btn_submit_insumo" value="Guardar Cambios" class="btn btn-block btn-primary" />
+
+            </form>
+        </div>
+    </div>
+    <div>
+        <a asp-action="Index">Regresar al Listado</a>
+    </div>
+</section>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

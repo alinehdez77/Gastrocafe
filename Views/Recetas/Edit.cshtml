@@ -1,0 +1,341 @@
+﻿@model SanRafael.Models.Receta
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Editar</h2>
+
+<h4>Receta</h4>
+<hr />
+<div class="row">
+    <div class="col-md-6 col-12 offset-md-3">
+        <form asp-action="Edit" id="editRecetaForm">
+            <h5>Datos de la receta</h5>
+            <hr />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" id="action" value="edit" />
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MetodoPreparacion" class="control-label"></label>
+                <textarea asp-for="MetodoPreparacion" class="form-control"></textarea>
+                <span asp-validation-for="MetodoPreparacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Porciones" class="control-label"></label>
+                <input asp-for="Porciones" class="form-control" />
+                <span asp-validation-for="Porciones" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoReceta" class="control-label"></label>
+                <input asp-for="TipoReceta" class="form-control" />
+                <span asp-validation-for="TipoReceta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Clasificacion" class="control-label"></label>
+                <input asp-for="Clasificacion" class="form-control" />
+                <span asp-validation-for="Clasificacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <!--<label asp-for="IdAreaProduccion" class="control-label"></label>-->
+                <!--<input asp-for="IdAreaProduccion" class="form-control" />-->
+                <div class="form-group">
+                    <label for="AreaProduccion">Selecciona un área de producción</label>
+                    <select class="form-control" id="AreaProduccion" asp-for="AreaProduccionId"></select>
+                </div>
+                <span asp-validation-for="AreaProduccionId" class="text-danger"></span>
+            </div>
+            <h5>Ingredientes</h5>
+            <hr />
+            <h4>Insumos</h4>
+            <table class="table table-hover" id="tableInsumos">
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Unidad</th>
+                        <th scope="col">Costo unitario</th>
+                        <th scope="col">Costo total</th>
+                        <th scope="col">Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--<tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+            </tr>-->
+
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>
+                            Acciones
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="#" data-toggle="modal" data-target="#addInsumoModal">+</a>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <h4>Recetas integradoras</h4>
+            <table class="table table-hover" id="tableRecetas">
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Costo unitario</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--<tr>
+                <th scope="row">1</th>
+                <td>Mark</td>s
+            </tr>-->
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>
+                            Acciones
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="#" data-toggle="modal" data-target="#addRecetaModal">+</a>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+            <h5>Costos y precios</h5>
+            <hr />
+            <div class="form-group">
+                <label asp-for="CostoUnitario" class="control-label"></label>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">$</span>
+                    </div>
+                    <input asp-for="CostoUnitario" type="text" class="form-control" aria-label="Monto en moneda nacional" readonly>
+                </div>
+                <small id="costoUnitarioHelp" class="form-text text-muted">Costo calculado de los insumos agregados a la receta y el número de porciones.</small>
+                <span asp-validation-for="CostoUnitario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CostoOtrosConUtilidad" class="control-label"></label>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">$</span>
+                    </div>
+                    <input asp-for="CostoOtrosConUtilidad" type="text" class="form-control" aria-label="Monto en moneda nacional" readonly>
+                </div>
+                <small id="costo+OtrosHelp" class="form-text text-muted">Costo unitario más gastos adicionales por servicios.</small>
+                <span asp-validation-for="CostoOtrosConUtilidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PrecioSugerido" class="control-label"></label>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">$</span>
+                    </div>
+                    <input asp-for="PrecioSugerido" type="text" class="form-control" aria-label="Monto en moneda nacional" readonly>
+                </div>
+                <small id="precioSugeridoHelp" class="form-text text-muted">Precio sugerido a partir de los costos y una amortización (personalizable en ajustes).</small>
+                <span asp-validation-for="PrecioSugerido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PrecioVentaConIva" class="control-label"></label>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">$</span>
+                    </div>
+                    <input asp-for="PrecioVentaConIva" type="text" class="form-control" aria-label="Monto en moneda nacional" readonly>
+                </div>
+                <small id="precioIvaHelp" class="form-text text-muted">Precio definido por el usuario más IVA.</small>
+                <span asp-validation-for="PrecioVentaConIva" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PrecioDefinidoPorUsuario" class="control-label"></label>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">$</span>
+                    </div>
+                    <input asp-for="PrecioDefinidoPorUsuario" type="number" class="form-control" aria-label="Monto en moneda nacional">
+                </div>
+                <small id="PrecioDefinidoHelp" class="form-text text-muted">Este precio se expondrá al publico general.</small>
+                <span asp-validation-for="PrecioDefinidoPorUsuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar cambios" class="btn btn-primary btn-block" id="submitEditReceta" />
+            </div>
+            <div class="alert alert-success" role="alert" id="alertSuccess" style="display:none;">
+                Receta actualizada. <a asp-action="Index">Volver al inicio</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Regresar al listado</a>
+</div>
+
+
+<!--Modales-->
+<div class="modal fade" id="addInsumoModal" tabindex="-1" role="dialog" aria-labelledby="addInsumoModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addInsumoModalLabel">Agregar insumos</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group row">
+                                <label for="txtBuscarInsumoModal" class="col-4">Buscar insumo: </label>
+                                <input type="text" class="form-control col-8" id="txtBuscarInsumoModal">
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <h4>Insumos</h4>
+                    <table class="table" id="addInsumosTableModal">
+                        <thead>
+                            <tr>
+                                <td>Nombre</td>
+                                <td>Acción</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!--
+                            <tr>
+                                <td>Nombre insumo</td>
+                                <td><a href="#" class="btn btn-success">Agregar</a></td>
+                            </tr>-->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <!--<button type="button" class="btn btn-primary">Guardar cambios</button>-->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--Modal para configurar el insumo que se agregará a la receta-->
+<div class="modal fade" id="configInsumoModal" tabindex="-1" role="dialog" aria-labelledby="configInsumoModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="configInsumoModalLabel">Agregar insumos</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col">
+                            <h4>Insumo</h4>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="nombreInsumoConfig">Nombre del insumo:</label>
+                                <input type="text" class="form-control" id="nombreInsumoConfig" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="cantidadInsumoConfig">Cantidad</label>
+                                <input type="number" value="1" class="form-control" id="cantidadInsumoConfig">
+                            </div>
+                            <div class="form-group">
+                                <label for="medidaInsumoConfig">Unidad base</label>
+                                <input type="text" class="form-control" id="medidaInsumoConfig" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" id="addInsumoConfigurado">Agregar insumo</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal para agregar recetas-->
+<div class="modal fade" id="addRecetaModal" tabindex="-1" role="dialog" aria-labelledby="addRecetaModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addRecetaModalLabel">Agregar receta integradora</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group row">
+                                <label for="txtBuscarRecetaModal" class="col-4">Buscar receta: </label>
+                                <input type="text" class="form-control col-8" id="txtBuscarRecetaModal">
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <h4>Recetas</h4>
+                    <table class="table" id="addRecetasTableModal">
+                        <thead>
+                            <tr>
+                                <td>Nombre</td>
+                                <td>Número de porciones a incluir</td>
+                                <td>Acción</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!--
+                            <tr>
+                                <td>Nombre insumo</td>
+                                <td><a href="#" class="btn btn-success">Agregar</a></td>
+                            </tr>-->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,130 @@
+﻿@model SanRafael.Models.Receta
+
+@{
+    ViewData["Title"] = "Detalles";
+}
+
+<section class="container">
+    <h2>Detalles</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-9 offset-md-4">
+            <h4>Receta</h4>
+            <dl class="row">
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Nombre)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.MetodoPreparacion)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.MetodoPreparacion)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Porciones)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Porciones)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.TipoReceta)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.TipoReceta)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Clasificacion)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Clasificacion)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Activo)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Activo)
+                </dd>
+                <dt class="col-sm-3">
+                    Área de producción
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.AreaProduccion.Nombre)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.CostoUnitario)
+                </dt>
+                <dd class="col-sm-9">
+                    $@Html.DisplayFor(model => model.CostoUnitario)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.CostoOtrosConUtilidad)
+                </dt>
+                <dd class="col-sm-9">
+                    $@Html.DisplayFor(model => model.CostoOtrosConUtilidad)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.PrecioSugerido)
+                </dt>
+                <dd class="col-sm-9">
+                    $@Html.DisplayFor(model => model.PrecioSugerido)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.PrecioVentaConIva)
+                </dt>
+                <dd class="col-sm-9">
+                    $@Html.DisplayFor(model => model.PrecioVentaConIva)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.PrecioDefinidoPorUsuario)
+                </dt>
+                <dt class="col-sm-9">
+                    $@Html.DisplayFor(model => model.PrecioDefinidoPorUsuario)
+                </dt>
+            </dl>
+        </div>
+    </div>
+
+    <h4>Insumos de la receta</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Peso</th>
+                <th>Unidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.InsumosReceta)
+            {
+                <tr>
+                    <td>@item.Insumo.Nombre</td>
+                    <td>@item.PesoNeto</td>
+                    <td>@item.Insumo.Nombre</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <h4>Recetas integradoras</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.RecetasIntegradoras)
+            {
+                <tr>
+                    <td>@item.RecetaHijo.Nombre</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <dt class="col-sm-3 pt-2">
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-secondary">Editar</a> |
+        <a asp-action="Index">Regresar al listado</a>
+    </dt>
+</section>
